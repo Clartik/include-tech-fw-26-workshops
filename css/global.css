@@ -3,17 +3,12 @@
     padding: 0;
 }
 
-#homepage-body {
-    color: white;
-    background: linear-gradient(90deg, #332950, #3C257E, #322D41);
-}
-
 #header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 20px 40px;
+    padding: 20px 30px;
 }
 
 #header-logo-container {
