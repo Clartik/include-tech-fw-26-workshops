@@ -4,18 +4,20 @@
 }
 
 #homepage-content {
-    margin-top: 50px;
+    margin-top: 30px;
     padding: 0 30px;
 }
 
 .member-card-header {
-    margin: 20px 0
+    margin-top: 30px;
 }
 
 .member-card-container {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+
+    padding: 25px 0;
 }
 
 .member-card {
