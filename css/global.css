@@ -35,3 +35,8 @@
     font-weight: 600;
     text-decoration: none;
 }
+
+.include-background {
+    color: white;
+    background: linear-gradient(90deg, #332950, #3C257E, #322D41);
+}
