@@ -10,6 +10,7 @@ memberCards.forEach(memberCard => {
             return;
         }
         
+        // Splits into an array, firstName at index 0, lastName at index 1
         const names = nameText.textContent.split(' ');
         
         let firstName = names[0];
