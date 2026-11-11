@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#homepage-body {
+    color: white;
+    background: linear-gradient(90deg, #332950, #3C257E, #322D41);
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 40px;
+}
+
+#header-logo-container {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    text-decoration: none;
+}
+
+#header-logo-text {
+    margin-top: -2px;
+
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.header-nav-item {
+    color: white;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+}
