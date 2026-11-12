@@ -5,8 +5,10 @@
 
 #homepage-paragraph {
     margin-top: 20px;
-
+    
     color: rgb(204, 204, 204);
+    
+    letter-spacing: 0.5px;
 }
 
 .member-card-header {
@@ -50,4 +52,8 @@
     object-fit: cover;
 
     border-radius: 20px;
+}
+
+.member-card-text {
+    letter-spacing: 0.5px;
 }
