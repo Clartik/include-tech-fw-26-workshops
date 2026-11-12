@@ -16,6 +16,6 @@ memberCards.forEach(memberCard => {
         let firstName = names[0];
         firstName = firstName.toLowerCase();
 
-        window.location.href = "/members/" + firstName + '.html';
+        window.location.href = "/members/" + firstName;
     });
 });
