@@ -3,6 +3,12 @@
     padding: 0 30px;
 }
 
+#homepage-paragraph {
+    margin-top: 20px;
+
+    color: rgb(204, 204, 204);
+}
+
 .member-card-header {
     margin-top: 30px;
 }
