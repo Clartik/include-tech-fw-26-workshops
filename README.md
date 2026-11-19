@@ -27,18 +27,26 @@ This repo is a static website (plain HTML, CSS, and JavaScript). The homepage li
 
 ```
 .
-├── index.html          # Homepage with member cards
+├── index.html                  # Homepage with member cards
 ├── members/
-│   └── person.html     # Member About Me page (Template)
+│   └── TEMPLATE.html           # Member About Me page (Template)
 ├── css/
-│   ├── global.css      # Styles shared across pages
-│   └── index.css       # Homepage styles
+│   ├── global.css              # Styles shared across pages
+│   ├── index.css               # Homepage styles
+│   └── members/
+│       └── TEMPLATE.css        # Member page styles (Template)
 ├── js/
-│   └── index.js        # Homepage scripts
+│   ├── index.js                # Homepage scripts
+│   └── members/
+│       └── TEMPLATE.js         # Member page scripts (Template)
 ├── assets/
-│   ├── logo.png        # #include logo
-│   └── person.png      # Placeholder member photo
-├── docs/               # Ignore folder, this is used for README.md
+│   ├── logo.png                # #include logo
+│   ├── person.png              # Placeholder member photo
+│   └── members/
+│       └── TEMPLATE/
+│           └── warning.png     # Image used by the template
+├── docs/                       # Ignore folder, this is used for README.md
+├── .gitignore
 ├── LICENSE
 └── README.md
 ```
@@ -46,9 +54,14 @@ This repo is a static website (plain HTML, CSS, and JavaScript). The homepage li
 ## Contributing
 
 1. Create a branch off `main` (`git checkout -b [name]-dev`).
-2. Duplicate `./members/person.html` and rename it to `[name].html`
-   ![Duplicate person.html](./docs/duplicate.png)
-3. Start here/paste your About Me page code.
+2. Duplicate `./members/TEMPLATE.html` and rename it to `[name].html`
+   ![Duplicate TEMPLATE.html](./docs/duplicate.png)
+3. Duplicate the template's matching files and rename them to `[name]`, so each page has its own:
+   - `./css/members/TEMPLATE.css` → `./css/members/[name].css`
+   - `./js/members/TEMPLATE.js` → `./js/members/[name].js`
+   - `./assets/members/TEMPLATE/` → `./assets/members/[name]/` (put your images here)
+4. Update the paths in your `[name].html` to point to your new files.
+5. Start here/paste your About Me page code.
 
 ## License
 
