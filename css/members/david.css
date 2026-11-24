@@ -40,10 +40,10 @@ html {
     font-family: sans-serif;
 }
 
-body {
-    background-color: var(--background);
+body.include-background {
+    background: var(--background);
     color: var(--text);
-    transition: background-color .3s, color .3s;
+    transition: background .3s, color .3s;
 }
 
 

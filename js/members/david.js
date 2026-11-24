@@ -1,6 +1,5 @@
-// Does nothing LOL
-// INTEREST DATA
-const interests = [
+/* INTEREST DATA */
+let interests = [
     {
         title: "Traveling",
         images: [
@@ -31,7 +30,7 @@ const interests = [
                 description: "One of my favorite games, especially for its raids and multiplayer activities."
             },
             {
-                src: "./images/../assets/members/david/gtavcard.jpg",
+                src: "../assets/members/david/gtavcard.jpg",
                 name: "GTA V",
                 description: "I enjoy the open world, missions, and playing online with friends."
             },
@@ -66,72 +65,66 @@ const interests = [
 ];
 
 
-// CREATE CARDS
-const container = document.getElementById("card-container");
+/* CREATE INTEREST CARDS */
+let container = document.getElementById("card-container");
 
-interests.forEach((interest) => {
+for (let i = 0; i < interests.length; i++) {
 
-    const card = document.createElement("div");
+    let card = document.createElement("div");
     card.className = "card";
 
-    card.innerHTML = `
-        <h3 class="card-title">${interest.title}</h3>
+    card.innerHTML =
+        '<h3 class="card-title">' + interests[i].title + '</h3>' +
 
-        <div class="card-image">
-            <img src="${interest.images[0].src}" alt="${interest.images[0].name}">
+        '<div class="card-image">' +
+            '<img id="image-' + i + '" src="' + interests[i].images[0].src + '">' +
 
-            <div class="image-overlay">
-                <h4>${interest.images[0].name}</h4>
-                <p>${interest.images[0].description}</p>
-            </div>
-        </div>
+            '<div class="image-overlay">' +
+                '<h4 id="name-' + i + '">' + interests[i].images[0].name + '</h4>' +
+                '<p id="description-' + i + '">' + interests[i].images[0].description + '</p>' +
+            '</div>' +
+        '</div>' +
 
-        <div class="card-navigation">
-            <div class="dots">
-                ${interest.images.map((image, index) => `
-                    <button type="button"
-                    class="dot ${index === 0 ? "active" : ""}"
-                    aria-label="Show ${image.name}"></button>
-                `).join("")}
-            </div>
-        </div>
-    `;
+        '<div class="card-navigation">' +
+            '<div class="dots">' +
+                '<button class="dot active" onclick="changeImage(' + i + ', 0)"></button>' +
+                '<button class="dot" onclick="changeImage(' + i + ', 1)"></button>' +
+                '<button class="dot" onclick="changeImage(' + i + ', 2)"></button>' +
+            '</div>' +
+        '</div>';
 
     container.appendChild(card);
 
-
-    // SWITCH IMAGES
-    const dots = card.querySelectorAll(".dot");
-    const image = card.querySelector(".card-image img");
-    const heading = card.querySelector(".image-overlay h4");
-    const description = card.querySelector(".image-overlay p");
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-
-            image.src = interest.images[index].src;
-            image.alt = interest.images[index].name;
-
-            heading.textContent = interest.images[index].name;
-            description.textContent = interest.images[index].description;
-
-            dots.forEach((dot) => {
-                dot.classList.remove("active");
-            });
-
-            dot.classList.add("active");
-
-        });
-
-    });
-
-});
+}
 
 
-// THEME SWITCHER
-const themeButton = document.getElementById("theme-toggle");
+/* SWITCH IMAGES */
+function changeImage(cardNumber, imageNumber) {
 
-themeButton.addEventListener("click", () => {
+    let image = document.getElementById("image-" + cardNumber);
+    let name = document.getElementById("name-" + cardNumber);
+    let description = document.getElementById("description-" + cardNumber);
+
+    image.src = interests[cardNumber].images[imageNumber].src;
+    image.alt = interests[cardNumber].images[imageNumber].name;
+
+    name.textContent = interests[cardNumber].images[imageNumber].name;
+    description.textContent = interests[cardNumber].images[imageNumber].description;
+
+    let card = container.children[cardNumber];
+    let dots = card.getElementsByClassName("dot");
+
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+    dots[imageNumber].classList.add("active");
+
+}
+
+
+/* THEME SWITCHER */
+let themeButton = document.getElementById("theme-toggle");
+themeButton.addEventListener("click", function() {
 
     document.body.classList.toggle("dark-mode");
 
