@@ -94,7 +94,6 @@ for (let i = 0; i < interests.length; i++) {
         '</div>';
 
     container.appendChild(card);
-
 }
 
 
@@ -118,7 +117,6 @@ function changeImage(cardNumber, imageNumber) {
         dots[i].classList.remove("active");
     }
     dots[imageNumber].classList.add("active");
-
 }
 
 
