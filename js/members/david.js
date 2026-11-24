@@ -5,17 +5,17 @@ const interests = [
         title: "Traveling",
         images: [
             {
-                src: "./images/riocard.jpg",
+                src: "../assets/members/david/riocard.jpg",
                 name: "Rio de Janeiro, Brazil",
                 description: "FUN FACT: Rio is home to one of the world's largest urban forests, Tijuca National Park."
             },
             {
-                src: "./images/egyptcard.jpg",
+                src: "../assets/members/david/egyptcard.jpg",
                 name: "Cairo, Egypt",
                 description: "FUN FACT: The Great Pyramid of Giza was the tallest human-made structure for nearly 3,800 years."
             },
             {
-                src: "./images/amsterdamcard.jpg",
+                src: "../assets/members/david/amsterdamcard.jpg",
                 name: "Amsterdam, Netherlands",
                 description: "FUN FACT: Amsterdam has more bicycles than residents."
             }
@@ -26,17 +26,17 @@ const interests = [
         title: "Video Games",
         images: [
             {
-                src: "./images/destinycard.jpg",
+                src: "../assets/members/david/destinycard.jpg",
                 name: "Destiny 2",
                 description: "One of my favorite games, especially for its raids and multiplayer activities."
             },
             {
-                src: "./images/gtavcard.jpg",
+                src: "./images/../assets/members/david/gtavcard.jpg",
                 name: "GTA V",
                 description: "I enjoy the open world, missions, and playing online with friends."
             },
             {
-                src: "./images/codcard.jpg",
+                src: "../assets/members/david/codcard.jpg",
                 name: "Call of Duty MW3",
                 description: "I enjoy the multiplayer and competitive side of the game."
             }
@@ -47,17 +47,17 @@ const interests = [
         title: "Sports",
         images: [
             {
-                src: "./images/ramscard.jpg",
+                src: "../assets/members/david/ramscard.jpg",
                 name: "Los Angeles Rams",
                 description: "FUN FACT: The Rams were the first NFL team to play in Los Angeles."
             },
             {
-                src: "./images/metscard.jpg",
+                src: "../assets/members/david/metscard.jpg",
                 name: "New York Mets",
                 description: "FUN FACT: Their team colors combine the blue of the Dodgers and orange of the Giants."
             },
             {
-                src: "./images/bullscard.jpg",
+                src: "../assets/members/david/bullscard.jpg",
                 name: "Chicago Bulls",
                 description: "FUN FACT: The Chicago Bulls have kept the same iconic primary logo since 1966."
             }
