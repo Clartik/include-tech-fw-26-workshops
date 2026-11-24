@@ -1,18 +1,318 @@
-#template-main {
+
+/* LIGHT MODE COLORS */
+:root {
+    --background: #f4f4f4;
+    --text: black;
+    --secondary-text: #444;
+    --card-background: white;
+    --header-background: #202020;
+    --footer-background: #11165c;
+    --overlay-background: rgba(255,255,255,0.9);
+    --dot-color: #ccc;
+    --active-color: blue;
+}
+
+
+/* DARK MODE COLORS */
+body.dark-mode {
+    --background: #181818;
+    --text: white;
+    --secondary-text: #ccc;
+    --card-background: #303030;
+    --header-background: #202020;
+    --footer-background: #8b1515;
+    --overlay-background: rgba(35,35,35,0.95);
+    --dot-color: #777;
+    --active-color: #ff3333;
+}
+
+
+/* GENERAL */
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    transition: background-color .3s, color .3s;
+}
+
+
+/* HEADER */
+.header {
+    background-color: var(--header-background);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+}
+
+.header h3 {
+    font-size: 2rem;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.header a,
+.footer a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color .3s;
+}
+
+.header a:hover,
+.footer a:hover {
+    color: #aaa;
+}
+
+
+/* THEME BUTTON */
+.theme-toggle {
+    background-color: #444;
+    color: white;
+    border: 1px solid #777;
+    padding: .8rem 1.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: background-color .3s;
+}
+
+.theme-toggle:hover {
+    background-color: #666;
+}
+
+
+/* INTRO */
+.intro {
+    max-width: 1100px;
+    margin: 5rem auto;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.intro-text h1 {
+    font-size: 4rem;
+    color: var(--text);
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+}
+
+.intro-text h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--secondary-text);
+    margin-bottom: 2rem;
+}
+
+.intro-text p {
+    font-size: 1.7rem;
+    line-height: 1.7;
+    color: var(--secondary-text);
+    margin-bottom: 2.5rem;
+}
+
+
+/* PROFILE IMAGE */
+.profile-image {
+    width: 25rem;
+    height: 25rem;
+    flex-shrink: 0;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* INTERESTS */
+.interests {
+    max-width: 1100px;
+    margin: 5rem auto;
+    padding: 2rem 3rem;
+}
+
+.interests h2 {
+    font-size: 2.8rem;
+    color: var(--text);
+    margin-bottom: 3rem;
+}
+
+
+/* CARDS */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+    margin-bottom: 5rem;
+}
+
+.card {
+    width: 30rem;
+    background-color: var(--card-background);
+    border-radius: .8rem;
+    overflow: hidden;
+    box-shadow: 0 .2rem .6rem rgba(0,0,0,0.12);
+    transition: background-color .3s;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 1.75rem;
+    padding: 1.5rem;
+    color: var(--text);
+}
+
+
+/* CARD IMAGES */
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 30rem;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--overlay-background);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    height: 100dvh;
-    gap: 25px;
-}
-
-#template-warning-icon {
-    width: 150px;
-}
-
-#template-list > li {
-    margin-top: 8px;
     text-align: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity .4s ease;
+}
+
+.card-image:hover .image-overlay {
+    opacity: 1;
+}
+
+.image-overlay h4 {
+    font-size: 2rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.image-overlay p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: var(--secondary-text);
+}
+
+
+/* CARD NAVIGATION */
+.card-navigation {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.dots {
+    display: flex;
+    gap: .8rem;
+}
+
+.dot {
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--dot-color);
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+.dot:hover {
+    background-color: var(--secondary-text);
+}
+
+.dot.active {
+    background-color: var(--active-color);
+}
+
+
+/* FOOTER */
+.footer {
+    background-color: var(--footer-background);
+    color: white;
+    padding: 2.5rem 4rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: background-color .3s;
+}
+
+.footer nav {
+    display: flex;
+    gap: 3rem;
+}
+
+
+/* SMALL SCREENS */
+@media (max-width: 700px) {
+
+    .header {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .footer {
+        justify-content: center;
+    }
+
+    .footer nav {
+        gap: 1.5rem;
+    }
+
+    .card-container {
+        gap: 2rem;
+    }
 }
